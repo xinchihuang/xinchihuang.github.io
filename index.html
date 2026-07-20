@@ -1,209 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Research Experiences for Undergraduates in Human-Centered Robotics at Stevens Institute of Technology." />
-  <title>Human-Centered Robotics REU | Stevens Institute of Technology</title>
-  <link rel="stylesheet" href="assets/styles.css" />
-  <script src="assets/script.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Research Experiences for Undergraduates in Human-Centered Robotics at Stevens Institute of Technology">
+  <title>Human-Centered Robotics REU | Stevens</title>
+  <style>
+    :root{--red:#a32638;--red2:#781c2b;--navy:#071d31;--ink:#17212b;--muted:#63717d;--line:#dfe5e9;--soft:#f4f7f9;--white:#fff;--shadow:0 18px 55px rgba(7,29,49,.14);--r:20px;--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#fff}a{color:inherit}img{max-width:100%;display:block}.container{width:min(calc(100% - 36px),var(--max));margin:auto}
+    .topbar{background:var(--navy);color:#dbe5ec;font-size:.86rem}.topbar .container{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}.topbar a{text-decoration:none}.topbar a:hover{color:#fff}
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{text-decoration:none;display:flex;align-items:center;gap:13px}.seal{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--red);color:#fff;font-weight:900;letter-spacing:.05em}.brand b,.brand small{display:block;line-height:1.2}.brand small{color:var(--muted);margin-top:4px}.navlinks{display:flex;gap:26px;align-items:center}.navlinks a{text-decoration:none;font-weight:700;font-size:.94rem}.navlinks a:hover{color:var(--red)}.apply{padding:11px 18px;border-radius:999px;background:var(--red);color:#fff!important}.menu{display:none;border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:10px;font-weight:700}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(110deg,var(--navy) 0 47%,#123b5c 47% 100%);color:#fff}.hero:after{content:"";position:absolute;right:-120px;top:-180px;width:520px;height:520px;border:90px solid rgba(255,255,255,.055);border-radius:50%}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:54px;align-items:center;padding:76px 0}.kicker{color:#ffbbc5;text-transform:uppercase;letter-spacing:.15em;font-weight:900;font-size:.78rem}.hero h1{font-size:clamp(2.7rem,5.4vw,5.5rem);line-height:.98;letter-spacing:-.05em;margin:14px 0 22px}.lead{font-size:1.13rem;color:#d8e4ec;max-width:670px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;justify-content:center;align-items:center;min-height:49px;padding:0 21px;border-radius:999px;text-decoration:none;font-weight:800}.btn-red{background:#fff;color:var(--navy)}.btn-outline{border:1px solid rgba(255,255,255,.4);color:#fff}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:42px}.stat{padding:16px;border-top:1px solid rgba(255,255,255,.25)}.stat strong{display:block;font-size:1.5rem}.stat span{font-size:.82rem;color:#c9d6df}
+    .slider{position:relative;overflow:hidden;border-radius:var(--r);box-shadow:var(--shadow);background:#dbe3e8}.slides{display:flex;transition:transform .55s ease}.slide{min-width:100%;position:relative;margin:0}.slide img{width:100%;aspect-ratio:4/3;object-fit:cover}.slide figcaption{position:absolute;left:20px;right:20px;bottom:18px;padding:10px 13px;background:rgba(7,29,49,.78);border-radius:10px;font-size:.86rem}.arrow{position:absolute;top:50%;transform:translateY(-50%);width:43px;height:43px;border:0;border-radius:50%;background:rgba(255,255,255,.94);font-size:1.7rem;cursor:pointer}.prev{left:13px}.next{right:13px}.dots{position:absolute;bottom:14px;right:18px;display:flex;gap:7px}.dot{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.5);padding:0}.dot.active{background:#fff;width:26px;border-radius:999px}
+    section{padding:90px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:34px}.eyebrow{color:var(--red);text-transform:uppercase;letter-spacing:.14em;font-weight:900;font-size:.76rem}.section-head h2,.about h2,.contact h2{font-size:clamp(2rem,3.5vw,3.45rem);line-height:1.08;letter-spacing:-.04em;margin:8px 0 0}.section-head>p{max-width:430px;color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}.about-copy{color:var(--muted);font-size:1.08rem}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}.feature{border:1px solid var(--line);border-radius:16px;padding:20px}.feature b{display:block;margin-bottom:7px}.feature p{margin:0;color:var(--muted);font-size:.92rem}
+    .projects{background:var(--soft)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:25px;min-height:300px;display:flex;flex-direction:column;transition:.2s}.card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(7,29,49,.1)}.num{color:var(--red);font-weight:900;letter-spacing:.12em}.card h3{font-size:1.2rem;line-height:1.35;margin:28px 0 16px}.mentor{color:var(--muted);margin-top:auto}.card details{border-top:1px solid var(--line);padding-top:14px;margin-top:15px}.card summary{cursor:pointer;font-weight:800}.card details p{color:var(--muted);font-size:.91rem}.placeholder{border-style:dashed}
+    .labs{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}.lab{display:flex;justify-content:space-between;text-decoration:none;padding:22px 8px;border-bottom:1px solid var(--line);font-weight:800}.lab:nth-child(odd){padding-right:30px}.lab:nth-child(even){padding-left:30px;border-left:1px solid var(--line)}.lab:hover{color:var(--red)}
+    .contact{padding-top:24px}.contactbox{background:var(--navy);color:#fff;border-radius:var(--r);padding:52px;display:grid;grid-template-columns:1fr 1fr;gap:58px}.contactbox p{color:#cfdae2}.contactinfo{display:grid;grid-template-columns:1fr 1fr;gap:22px}.contactinfo p{margin:0}.contactinfo a{color:#fff}.contact .eyebrow{color:#ffbbc5}
+    footer{padding:27px 0;color:var(--muted);font-size:.9rem}.foot{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:900px){.hero-grid,.about-grid,.contactbox{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.hero-grid{padding:58px 0}.section-head{align-items:start;flex-direction:column}}
+    @media(max-width:700px){.topbar{display:none}.menu{display:block}.navlinks{display:none;position:absolute;top:76px;left:12px;right:12px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px;flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:12px}.apply{text-align:center}.brand small{display:none}.hero{background:var(--navy)}.stats{grid-template-columns:1fr}.grid,.labs,.contactinfo{grid-template-columns:1fr}.lab:nth-child(odd),.lab:nth-child(even){padding:19px 5px;border-left:0}.contactbox{padding:32px 23px}section{padding:70px 0}.foot{flex-direction:column;gap:3px}}
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="Human-Centered Robotics REU home">
-        <span class="brand-mark">HCR</span>
-        <span>
-          <strong>Human-Centered Robotics</strong>
-          <small>Research Experiences for Undergraduates</small>
-        </span>
-      </a>
-      <button class="menu-button" aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#labs">Laboratories</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <section id="top" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Stevens Institute of Technology</p>
-          <h1>Research Experiences for Undergraduates in Human-Centered Robotics</h1>
-          <p class="hero-text">
-            Explore robotics research spanning autonomous systems, human–robot interaction,
-            perception, wearable robotics, soft robotics, and intelligent control.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#projects">Explore projects</a>
-            <a class="button secondary" href="#contact">Program information</a>
-          </div>
-        </div>
-
-        <div class="carousel" aria-label="Student and laboratory photo gallery">
-          <div class="carousel-viewport">
-            <div class="carousel-track">
-              <figure class="slide is-active">
-                <img src="assets/images/slide-1.svg" alt="Placeholder for a group photo of REU students" />
-                <figcaption>Replace with an REU student group photo</figcaption>
-              </figure>
-              <figure class="slide">
-                <img src="assets/images/slide-2.svg" alt="Placeholder for students working with a robot" />
-                <figcaption>Replace with a laboratory research photo</figcaption>
-              </figure>
-              <figure class="slide">
-                <img src="assets/images/slide-3.svg" alt="Placeholder for a robotics demonstration" />
-                <figcaption>Add as many slides as needed</figcaption>
-              </figure>
-            </div>
-          </div>
-          <button class="carousel-button previous" type="button" aria-label="Previous image">‹</button>
-          <button class="carousel-button next" type="button" aria-label="Next image">›</button>
-          <div class="carousel-dots" aria-label="Choose an image"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section about-section">
-      <div class="container split-layout">
-        <div>
-          <p class="section-label">About the program</p>
-          <h2>Hands-on research at the intersection of people and robots</h2>
-        </div>
-        <div class="prose">
-          <p>
-            This page is designed as a flexible program website. Replace this paragraph with the
-            official program description, eligibility requirements, program dates, funding details,
-            application deadline, and expected student outcomes.
-          </p>
-          <p>
-            The layout is fully static and portable: it can first run under a GitHub Pages project
-            URL and later move to a custom domain without changing the internal file paths.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section muted-section">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Research opportunities</p>
-            <h2>Example Research Projects</h2>
-          </div>
-          <p>Select a card to expand its editable description.</p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <span class="project-number">01</span>
-            <h3>Learning-Based Mobile Robot Navigation in Human Environments</h3>
-            <p class="mentor">Faculty mentor: Guo</p>
-            <details><summary>Project details</summary><p>Add the project goals, methods, required skills, and expected student deliverables here.</p></details>
-          </article>
-          <article class="project-card">
-            <span class="project-number">02</span>
-            <h3>Enhancing Operator-Drone Interactions via Vision-Language Foundation Models</h3>
-            <p class="mentor">Faculty mentor: Jafarnejad Sani</p>
-            <details><summary>Project details</summary><p>Add the project goals, methods, required skills, and expected student deliverables here.</p></details>
-          </article>
-          <article class="project-card">
-            <span class="project-number">03</span>
-            <h3>Supervision and Tasking of Large Deployments of Unmanned Surface Vehicles</h3>
-            <p class="mentor">Faculty mentor: Englot</p>
-            <details><summary>Project details</summary><p>Add the project goals, methods, required skills, and expected student deliverables here.</p></details>
-          </article>
-          <article class="project-card">
-            <span class="project-number">04</span>
-            <h3>Maximizing Ankle Exoskeleton Fit and Alignment via Machine-Learning Methods</h3>
-            <p class="mentor">Faculty mentor: Zanotto</p>
-            <details><summary>Project details</summary><p>Add the project goals, methods, required skills, and expected student deliverables here.</p></details>
-          </article>
-          <article class="project-card">
-            <span class="project-number">05</span>
-            <h3>Learning-Based Sensing and Feedback Control of a Soft Robotic Finger</h3>
-            <p class="mentor">Faculty mentor: Libby</p>
-            <details><summary>Project details</summary><p>Add the project goals, methods, required skills, and expected student deliverables here.</p></details>
-          </article>
-          <article class="project-card placeholder-card">
-            <span class="project-number">06</span>
-            <h3>Project title to be added</h3>
-            <p class="mentor">Faculty mentor: Wang</p>
-            <details><summary>Project details</summary><p>The source document did not include a title for project 6. Replace this placeholder when confirmed.</p></details>
-          </article>
-          <article class="project-card">
-            <span class="project-number">07</span>
-            <h3>Uncertainty Estimation for 3D Environment Perception</h3>
-            <p class="mentor">Faculty mentor: Mordohai</p>
-            <details><summary>Project details</summary><p>Add the project goals, methods, required skills, and expected student deliverables here.</p></details>
-          </article>
-          <article class="project-card">
-            <span class="project-number">08</span>
-            <h3>Energy-Aware Persistent Monitoring with Mobile Robots</h3>
-            <p class="mentor">Faculty mentor: Welikala</p>
-            <details><summary>Project details</summary><p>Add the project goals, methods, required skills, and expected student deliverables here.</p></details>
-          </article>
-          <article class="project-card">
-            <span class="project-number">09</span>
-            <h3>Trust-Aware Human–Robot Collaboration</h3>
-            <p class="mentor">Faculty mentor: Liao</p>
-            <details><summary>Project details</summary><p>Add the project goals, methods, required skills, and expected student deliverables here.</p></details>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="labs" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Research community</p>
-            <h2>Participating Research Laboratories</h2>
-          </div>
-          <p>External links open in a new tab.</p>
-        </div>
-
-        <div class="lab-list">
-          <a href="https://www.stevens.edu/robotics-and-automation-laboratory" target="_blank" rel="noopener">Robotics and Automation Lab <span>↗</span></a>
-          <a href="https://longwang.in" target="_blank" rel="noopener">Advanced Robot Manipulators Lab <span>↗</span></a>
-          <a href="https://saslabstevens.github.io" target="_blank" rel="noopener">Safe Autonomous Systems Lab <span>↗</span></a>
-          <a href="http://robustfieldautonomylab.github.io" target="_blank" rel="noopener">Robust Field Autonomy Lab <span>↗</span></a>
-          <a href="https://www.wrslab.com" target="_blank" rel="noopener">Wearable Robotic Systems Lab <span>↗</span></a>
-          <a href="https://roboforhealth.com" target="_blank" rel="noopener">Robotic Systems for Health Lab <span>↗</span></a>
-          <a href="https://mordohai.github.io" target="_blank" rel="noopener">Computer Vision Lab <span>↗</span></a>
-          <a href="https://www.tingliao.net" target="_blank" rel="noopener">Human-AI Interaction Design Lab <span>↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <div class="container contact-card">
-        <div>
-          <p class="section-label">Contact and application</p>
-          <h2>Interested in the program?</h2>
-          <p>Replace the placeholders below with the official coordinator, email, application link, deadline, and mailing address.</p>
-        </div>
-        <div class="contact-details">
-          <p><strong>Program coordinator</strong><br />Name to be added</p>
-          <p><strong>Email</strong><br /><a href="mailto:reu@example.edu">reu@example.edu</a></p>
-          <p><strong>Application</strong><br /><a href="#">Application link to be added</a></p>
-          <p><strong>Location</strong><br />Stevens Institute of Technology, Hoboken, New Jersey</p>
-        </div>
-      </div>
-    </section>
+  <div class="topbar"><div class="container"><span>Stevens Institute of Technology · Hoboken, New Jersey</span><a href="#contact">Program Contact</a></div></div>
+  <header><div class="container nav"><a class="brand" href="#top"><span class="seal">HCR</span><span><b>Human-Centered Robotics</b><small>Research Experiences for Undergraduates</small></span></a><button class="menu" aria-label="Open menu">Menu</button><nav class="navlinks"><a href="#about">About</a><a href="#projects">Projects</a><a href="#labs">Labs</a><a href="#contact">Contact</a><a class="apply" href="#contact">Apply</a></nav></div></header>
+  <main>
+    <section class="hero" id="top"><div class="container hero-grid"><div><div class="kicker">Summer research program</div><h1>Build the future of human-centered robotics.</h1><p class="lead">An undergraduate research experience spanning autonomy, perception, human–robot interaction, wearable systems, soft robotics, and intelligent control.</p><div class="buttons"><a class="btn btn-red" href="#projects">Explore projects</a><a class="btn btn-outline" href="#about">About the program</a></div><div class="stats"><div class="stat"><strong>9</strong><span>Example projects</span></div><div class="stat"><strong>8</strong><span>Research laboratories</span></div><div class="stat"><strong>1</strong><span>Collaborative REU community</span></div></div></div>
+      <div class="slider" aria-label="Program photo gallery"><div class="slides"><figure class="slide"><img src="assets/images/slide-1.svg" alt="REU students"><figcaption>Replace this placeholder with an REU student group photo.</figcaption></figure><figure class="slide"><img src="assets/images/slide-2.svg" alt="Students working in a robotics lab"><figcaption>Show students conducting hands-on robotics research.</figcaption></figure><figure class="slide"><img src="assets/images/slide-3.svg" alt="Robotics demonstration"><figcaption>Add more slides by copying one figure element.</figcaption></figure></div><button class="arrow prev" aria-label="Previous slide">‹</button><button class="arrow next" aria-label="Next slide">›</button><div class="dots"></div></div>
+    </div></section>
+    <section class="about" id="about"><div class="container"><div class="about-grid"><div><div class="eyebrow">About the program</div><h2>Research where robotics meets human needs.</h2></div><div class="about-copy"><p>Replace this paragraph with the official program description, program dates, eligibility requirements, stipend, housing or travel support, application deadline, and learning outcomes.</p><p>This website is intentionally portable. It works as a GitHub Pages project site and can later move to a custom domain because all image links use relative paths.</p><div class="features"><div class="feature"><b>Mentored research</b><p>Work closely with faculty and graduate researchers.</p></div><div class="feature"><b>Technical development</b><p>Build experience in robotics, AI, perception, and controls.</p></div><div class="feature"><b>Research community</b><p>Present findings and connect across participating labs.</p></div></div></div></div></div></section>
+    <section class="projects" id="projects"><div class="container"><div class="section-head"><div><div class="eyebrow">Research opportunities</div><h2>Example Research Projects</h2></div><p>Open each card to add goals, methods, preferred skills, and expected deliverables.</p></div><div class="grid">
+      <article class="card"><span class="num">01</span><h3>Learning-Based Mobile Robot Navigation in Human Environments</h3><p class="mentor">Faculty mentor: Guo</p><details><summary>Project details</summary><p>Add the project goals, methods, required skills, and student deliverables here.</p></details></article>
+      <article class="card"><span class="num">02</span><h3>Enhancing Operator-Drone Interactions via Vision-Language Foundation Models</h3><p class="mentor">Faculty mentor: Jafarnejad Sani</p><details><summary>Project details</summary><p>Add the project goals, methods, required skills, and student deliverables here.</p></details></article>
+      <article class="card"><span class="num">03</span><h3>Supervision and Tasking of Large Deployments of Unmanned Surface Vehicles</h3><p class="mentor">Faculty mentor: Englot</p><details><summary>Project details</summary><p>Add the project goals, methods, required skills, and student deliverables here.</p></details></article>
+      <article class="card"><span class="num">04</span><h3>Maximizing Ankle Exoskeleton Fit and Alignment via Machine-Learning Methods</h3><p class="mentor">Faculty mentor: Zanotto</p><details><summary>Project details</summary><p>Add the project goals, methods, required skills, and student deliverables here.</p></details></article>
+      <article class="card"><span class="num">05</span><h3>Learning-Based Sensing and Feedback Control of a Soft Robotic Finger</h3><p class="mentor">Faculty mentor: Libby</p><details><summary>Project details</summary><p>Add the project goals, methods, required skills, and student deliverables here.</p></details></article>
+      <article class="card placeholder"><span class="num">06</span><h3>Project title to be added</h3><p class="mentor">Faculty mentor: Wang</p><details><summary>Project details</summary><p>The source document did not include a project title. Replace this placeholder when confirmed.</p></details></article>
+      <article class="card"><span class="num">07</span><h3>Uncertainty Estimation for 3D Environment Perception</h3><p class="mentor">Faculty mentor: Mordohai</p><details><summary>Project details</summary><p>Add the project goals, methods, required skills, and student deliverables here.</p></details></article>
+      <article class="card"><span class="num">08</span><h3>Energy-Aware Persistent Monitoring with Mobile Robots</h3><p class="mentor">Faculty mentor: Welikala</p><details><summary>Project details</summary><p>Add the project goals, methods, required skills, and student deliverables here.</p></details></article>
+      <article class="card"><span class="num">09</span><h3>Trust-Aware Human–Robot Collaboration</h3><p class="mentor">Faculty mentor: Liao</p><details><summary>Project details</summary><p>Add the project goals, methods, required skills, and student deliverables here.</p></details></article>
+    </div></div></section>
+    <section id="labs"><div class="container"><div class="section-head"><div><div class="eyebrow">Research community</div><h2>Participating Laboratories</h2></div><p>These links can remain external or later be replaced with internal lab profile pages.</p></div><div class="labs">
+      <a class="lab" href="https://www.stevens.edu/robotics-and-automation-laboratory" target="_blank" rel="noopener">Robotics and Automation Lab <span>↗</span></a><a class="lab" href="https://longwang.in" target="_blank" rel="noopener">Advanced Robot Manipulators Lab <span>↗</span></a><a class="lab" href="https://saslabstevens.github.io" target="_blank" rel="noopener">Safe Autonomous Systems Lab <span>↗</span></a><a class="lab" href="http://robustfieldautonomylab.github.io" target="_blank" rel="noopener">Robust Field Autonomy Lab <span>↗</span></a><a class="lab" href="https://www.wrslab.com" target="_blank" rel="noopener">Wearable Robotic Systems Lab <span>↗</span></a><a class="lab" href="https://roboforhealth.com" target="_blank" rel="noopener">Robotic Systems for Health Lab <span>↗</span></a><a class="lab" href="https://mordohai.github.io" target="_blank" rel="noopener">Computer Vision Lab <span>↗</span></a><a class="lab" href="https://www.tingliao.net" target="_blank" rel="noopener">Human-AI Interaction Design Lab <span>↗</span></a>
+    </div></div></section>
+    <section class="contact" id="contact"><div class="container contactbox"><div><div class="eyebrow">Contact and application</div><h2>Join the program.</h2><p>Replace these placeholders with the official coordinator, deadline, application link, and contact details.</p></div><div class="contactinfo"><p><b>Coordinator</b><br>Name to be added</p><p><b>Email</b><br><a href="mailto:reu@example.edu">reu@example.edu</a></p><p><b>Application</b><br><a href="#">Application link</a></p><p><b>Location</b><br>Stevens Institute of Technology<br>Hoboken, New Jersey</p></div></div></section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="current-year"></span> Human-Centered Robotics REU</p>
-      <p>Stevens Institute of Technology</p>
-    </div>
-  </footer>
+  <footer><div class="container foot"><span>© <span id="year"></span> Human-Centered Robotics REU</span><span>Stevens Institute of Technology</span></div></footer>
+  <script>
+    const menu=document.querySelector('.menu'),nav=document.querySelector('.navlinks');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+    const track=document.querySelector('.slides'),slides=[...document.querySelectorAll('.slide')],dots=document.querySelector('.dots');let i=0,timer;slides.forEach((_,n)=>{const b=document.createElement('button');b.className='dot'+(n===0?' active':'');b.setAttribute('aria-label','Go to slide '+(n+1));b.onclick=()=>go(n);dots.appendChild(b)});const dotEls=[...dots.children];function go(n){i=(n+slides.length)%slides.length;track.style.transform=`translateX(-${i*100}%)`;dotEls.forEach((d,k)=>d.classList.toggle('active',k===i));restart()}function restart(){clearInterval(timer);timer=setInterval(()=>go(i+1),5500)}document.querySelector('.prev').onclick=()=>go(i-1);document.querySelector('.next').onclick=()=>go(i+1);let x=0;track.addEventListener('touchstart',e=>x=e.touches[0].clientX,{passive:true});track.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-x;if(Math.abs(d)>45)go(i+(d<0?1:-1))},{passive:true});restart();document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
