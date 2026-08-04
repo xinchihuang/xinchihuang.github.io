@@ -1,20 +1,13 @@
-# Human-Centered Robotics REU Website
+# Human-Centered Robotics Enabled by Embodied AI
 
-Deploy the contents of this folder to the root of a GitHub Pages repository.
+Static GitHub Pages website.
 
 ## Structure
 
-```text
-index.html
-assets/
-  styles.css
-  script.js
-  images/
-    SummerStudent-NYC.jpg
-    Lab-Summer2026.jpg
-```
+- `index.html`
+- `assets/styles.css`
+- `assets/script.js`
+- `assets/images/SummerScholars-bg-Stevens.jpg`
+- `assets/images/SummerScholars-bg-NYC.jpg`
 
-- Edit layout/content in `index.html`.
-- Edit visual styles in `assets/styles.css`.
-- Edit carousel and mobile navigation behavior in `assets/script.js`.
-- Replace the image files while keeping the same names, or update their paths in `index.html`.
+Upload all files and folders to the root of the GitHub Pages repository.
